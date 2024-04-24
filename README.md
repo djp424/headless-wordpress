@@ -13,6 +13,7 @@ This is a proof on concept project for displaying a list of movies with a Headle
 1. Run `npm run env:launch`
 1. Run `./bin/wp.sh gbr create-sample-content`
 1. Run `cd react-app`
+1. Run `npm install`
 1. Run `npm run dev`
 
 ## How to Use
