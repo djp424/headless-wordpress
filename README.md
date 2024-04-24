@@ -45,3 +45,4 @@ After setup, simply go to http://localhost:3000/ and enjoy
 1. Cleanup boilerplate content in react app
 1. Automate new setup scripts
 1. Automate last step where you need to login to wordpress to make the rest api work on setup
+1. Add more comments to the react app
