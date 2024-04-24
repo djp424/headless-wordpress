@@ -16,12 +16,15 @@ This is a proof on concept project for displaying a list of movies with a Headle
 1. Run `cd react-app`
 1. Run `npm install`
 1. Run `npm run dev`
+1. Run `open http://localhost:8888/wp-admin/options-permalink.php` and login (admin/password)
+1. Run `open http://localhost:3000/` and login (admin/password)
+
+or just run the following: `gh repo clone djp424/headless-wordpress; cd headless-wordpress; npm install; npm run env:init; npm run env:launch; ./bin/wp.sh gbr create-sample-content; ./bin/wp.sh rewrite flush; cd react-app; npm install; npm run dev; open http://localhost:8888/wp-admin/options-permalink.php; open http://localhost:3000/`
 
 ## How to Use
 
 Once the above commands have ran, you can now do the following:
 1. Go to http://localhost:3000/ and click around the site
-1. (optional) If you want to see the WordPress backend and make changes, you can go to http://localhost:8888/wp-admin/ and login with admin/password
 
 ## Enhansements to make in the future
 
@@ -37,3 +40,4 @@ Once the above commands have ran, you can now do the following:
 1. Cleanup the frontend layout of the react app (spacing etc)
 1. Cleanup boilerplate content in react app
 1. Automate new setup scripts
+1. Automate last step where you need to login to wordpress to make the rest api work on setup
