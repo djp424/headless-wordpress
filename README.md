@@ -35,3 +35,4 @@ Once the above commands have ran, you can now do the following:
 1. Update WP-CLI script to account for additional edge cases
 1. Cleanup the frontend layout of the react app (spacing etc)
 1. Cleanup boilerplate content in react app
+1. Automate new setup scripts
