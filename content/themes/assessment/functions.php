@@ -3,6 +3,8 @@
  * Theme functions.
  */
 
+add_theme_support('post-thumbnails');
+
 /**
  * Enqueue scripts/styles.
  *
@@ -64,3 +66,7 @@ function headless_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'headless_scripts' );
+
+// Load classes.
+require_once __DIR__ . '/classes/cli.php';
+require_once __DIR__ . '/classes/movie.php';

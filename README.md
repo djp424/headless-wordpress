@@ -1,12 +1,8 @@
-# WordPress Assessment
+# Headless WordPress Proof of Concept
 
-This is our assessment for incoming WordPress developers aimed toward gauging experience with WordPress.
+This is a proof on concept project for displaying a list of movies with a Headless WordPress setup via Next.js
 
-Please follow the steps below and turn it in to us when you are done!
-
-> NOTE: Anything marked as 'BONUS' is **NOT** required and is only there if you feel like showing off. That being said, feel free to show off. Have fun with it!
-
-## Setup
+## Requirements/Install/Setup
 
 > WARNING: This setup assumes a Linux-based system (Linux, macOS, Windows >= 10 w/ WSL) running node version ~18 with
 > npm version ~8 and Docker. If you have trouble running anything, it probably has something to do with the above.
@@ -15,70 +11,26 @@ Please follow the steps below and turn it in to us when you are done!
 1. Run `npm install`
 1. Run `npm run env:init`
 1. Run `npm run env:launch`
+1. Run `./bin/wp.sh gbr create-sample-content`
+1. Run `cd react-app`
+1. Run `npm run dev`
 
-**Away We Go!**
+## How to Use
 
-In a few minutes, you should have a fresh WordPress install up and running with a simple theme named WordPress Assessment activated. The service assumes it can run on port 8888, so if there's a conflict there, you'll have to edit `.wp-env.json`, run `npm run env:destroy` and then re-run `npm run env:init`.
+Once the above commands have ran, you can now do the following:
+1. Go to http://localhost:3000/ and click around the site
+1. (optional) If you want to see the WordPress backend and make changes, you can go to http://localhost:8888/wp-admin/ and login with admin/password
 
-Any changes made to the `./content/` folder will show up on the WordPress install.
+## Enhansements to make in the future
 
-**WP-CLI**
-
-If you need to run any wp-cli commands, it is available via either `npx wp-env run cli [command]` OR, you can use the `./bin/wp.sh` which should make things a bit easier.
-
-## Assessments
-
-* [Advanced Assessment](docs/advanced.md) - If you have been asked to take the advanced assessment, read the instructions here.
-* [Standard Assessment](docs/standard.md) - Our standard WordPress assessment.
-
-## Requirements
-
-- Ideally you'd use the @wordpress/env (Docker-based) setup so that we can all run this on our machines.
-- Any JavaScript libraries should be installed via package.json.
-- Add installation and instructions for running your code in your README.
-- I need to be able to independently run whatever you produce locally, so I can see the same result you want me to see.
-
-**Preferences**
-
-- Please don't include your whole database image (if you need to, you can include a database dump, like `dump.sql`).
-- The more automated the better (think fewer steps for the assessor to complete to get things working).
-
-## Information
-
-* [Read about @wordpress/env](https://github.com/WordPress/gutenberg/tree/trunk/packages/env).
-* [Read about @wordpress/scripts](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts).
-
-## Common Issues
-
-* **I have an error about port 8888 being in use.**
-
-  You likely already have something running on port 8888. Stop any web services you may already have running, and try
-  again. If that doesn't work, and you're on Mac or Linux, try this:
-  ```shell
-  lsof -i :8888
-  ```
-  This should give you an idea of what service you need to stop/kill to be able to run this project.
-
-  If that doesn't work, edit the ports in `.wp-env.json` and start the instructions over.
-
-* **I'm getting an error running npm install.**
-
-  Make sure you're using the right version of `node/npm` as specified above by checking:
-  
-  ```shell
-  node --version
-  npm --version
-  ```
-
-* **I get an error about not being able to connect to mysql.**
-
-  Most likely, your Docker app is out of date. Download the latest update for Docker, install it and start it again.
-
-  Once that's done and Docker is back up and running, you'll have to rebuild your environment:
-
-  ```shell
-  npm run env:stop
-  npm run env:destroy
-  npm run env:init
-  npm run env:launch
-  ```
+1. Add unit testing to this project
+1. Assess the site for accessablity enhancements (example: test using voiceover)
+1. Remove duplicate code in react app by creating shared components for similar code
+1. Update images in react app to use Next.js Image component
+1. Implament endpoind caching for Next.js app
+1. Update SASS app to use a cleaner media query setup (with variables etc)
+1. Update media import to be a little cleaner and import several images
+1. Look into updating WP-CLI script to call other WordPress CLI scripts instead of calling WordPres php functions
+1. Update WP-CLI script to account for additional edge cases
+1. Cleanup the frontend layout of the react app (spacing etc)
+1. Cleanup boilerplate content in react app
